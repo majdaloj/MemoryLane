@@ -11,9 +11,9 @@ import Main from './Main';
 import SendMessage from './SendMessage';
 import Settings from './Settings';
 import Friends from './Friends';
+import Archive from './Archive';
 
 const Stack = createStackNavigator();
-
 
 export default function App() {
   return (
@@ -26,6 +26,7 @@ export default function App() {
         <Stack.Screen name="SendMessage" component={SendMessage} />
         <Stack.Screen name="Settings" component={Settings} />
         <Stack.Screen name="Friends" component={Friends} />
+        <Stack.Screen name="Archive" component={Archive} />
       </Stack.Navigator>
     </NavigationContainer>
   );
