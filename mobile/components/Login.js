@@ -55,7 +55,7 @@ const Login = () => {
           <Text style={{ color: 'white', textAlign: 'center' }}>Log In</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={goToSignup} style={{ marginTop: 10 }}>
-          <Text style={{ color: 'white', textAlign: 'center' }}>Don't have an account? Sign Up</Text>
+          <Text style={{ color: 'gray', textAlign: 'center' }}>Don't have an account? Sign Up</Text>
         </TouchableOpacity>
       </View>
     </View>
