@@ -1,0 +1,15 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "UofTHacks2024",
+    "database": "postgres",
+    "host": "uofthacks2024.ch8euecmybcl.us-east-2.rds.amazonaws.com",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
+  }
+}
