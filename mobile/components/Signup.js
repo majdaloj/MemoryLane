@@ -86,7 +86,7 @@ const Signup = () => {
         </View> */}
 
         <TouchableOpacity onPress={handleSignup} style={styles.signupButton}>
-          <Text style={styles.signupButtonText}>Log In</Text>
+          <Text style={styles.signupButtonText}>Sign Up</Text>
         </TouchableOpacity>
       </View>
     </View>
