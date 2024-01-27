@@ -1,17 +1,16 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 
 // importing different pages
-import Login from './Login';
-import Signup from './Signup';
-import Main from './Main';
-import SendMessage from './SendMessage';
-import Settings from './Settings';
-import Friends from './Friends';
-import Archive from './Archive';
+import Login from './components/Login.js';
+import Signup from './components/Signup.js';
+import Main from './components/Main.js';
+import CreateMessage from './components/CreateMessage.js';
+import Settings from './components/Settings.js';
+import Friends from './components/Friends.js';
+import Archive from './components/Archive.js';
 
 const Stack = createStackNavigator();
 
@@ -23,7 +22,7 @@ export default function App() {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="Main" component={Main} />
-        <Stack.Screen name="SendMessage" component={SendMessage} />
+        <Stack.Screen name="CreateMessage" component={CreateMessage} />
         <Stack.Screen name="Settings" component={Settings} />
         <Stack.Screen name="Friends" component={Friends} />
         <Stack.Screen name="Archive" component={Archive} />
