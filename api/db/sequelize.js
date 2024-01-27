@@ -1,6 +1,6 @@
 // sequelize.js
 const { Sequelize } = require('sequelize');
-const config = require('../config/config.json'); // Update the path as needed
+const config = require('../config/config.json');
 
 const sequelize = new Sequelize(config.development);
 
