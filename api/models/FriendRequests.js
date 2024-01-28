@@ -26,7 +26,7 @@ const FriendRequest = sequelize.define('FriendRequest', {
     },
   },
   status: {
-    type: DataTypes.ENUM('pending', 'accepted', 'rejected'),
+    type: DataTypes.ENUM('pending', 'accepted', 'rejected', 'withdrawn'),
     defaultValue: 'pending',
   },
 });

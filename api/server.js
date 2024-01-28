@@ -4,7 +4,7 @@ const sequelize = require('./db/sequelize');
 const User = require('./models/User');
 const Memory = require('./models/Memory');
 const UserBoundary = require('./models/UserBoundary');
-// const FriendRequest = require('./models/FriendRequests');
+const FriendRequest = require('./models/FriendRequests');
 const Friend = require('./models/Friend');
 
 const sendMemoryRouter = require('./routes/send-memory');

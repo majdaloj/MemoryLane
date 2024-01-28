@@ -4,6 +4,7 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 const Friend = require('../models/Friend');
 const User = require('../models/User');
+const FriendRequests = require('../models/FriendRequests');
 
 router.use(bodyParser.json());
 
@@ -80,6 +81,53 @@ router.get('/are-friends/:userId/:friendUserId', async (req, res) => {
     res.json(areFriends);
   } catch (error) {
     console.error('Error checking friendship:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+// Create a friend request
+router.post('/friend-request', async (req, res) => {
+  try {
+    const { sender_id, receiver_id } = req.body;
+
+    // Check if a friend request already exists
+    const existingRequest = await FriendRequests.findOne({
+      where: { sender_id, receiver_id, status: 'pending' },
+    });
+
+    if (existingRequest) {
+      return res.status(400).json({ error: 'Friend request already sent' });
+    }
+
+    const newRequest = await FriendRequests.create({ sender_id, receiver_id });
+    res.status(201).json(newRequest);
+  } catch (error) {
+    console.error('Error creating friend request:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+router.put('/friend-request/:requestId', async (req, res) => {
+  try {
+    const requestId = req.params.requestId;
+    const { status } = req.body;
+
+    // Check if the friend request exists
+    const requestToUpdate = await FriendRequests.findOne({
+      where: { request_id: requestId },
+    });
+
+    if (!requestToUpdate) {
+      return res.status(404).json({ error: 'Friend request not found' });
+    }
+
+    // Update the friend request status
+    requestToUpdate.status = status;
+    await requestToUpdate.save();
+
+    res.status(200).json(requestToUpdate);
+  } catch (error) {
+    console.error('Error updating friend request status:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
