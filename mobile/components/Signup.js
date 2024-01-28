@@ -1,8 +1,15 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const Signup = () => {
+  const navigation = useNavigation();
+
+  const goToLogin = () => {
+    navigation.navigate('Login');
+  };
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
@@ -65,6 +72,10 @@ const Signup = () => {
 
         <TouchableOpacity onPress={handleSignup} style={styles.signupButton}>
           <Text style={styles.signupButtonText}>Sign Up</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={goToLogin} style={{ marginTop: 10 }}>
+          <Text style={{ color: 'gray', textAlign: 'center' }}>Already have an account? Log in</Text>
         </TouchableOpacity>
       </View>
     </View>
