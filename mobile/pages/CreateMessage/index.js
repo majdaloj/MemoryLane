@@ -5,6 +5,7 @@ import SelectMediaType from "./SelectMediaType";
 import UploadMedia from "./UploadMedia";
 import WriteMessage from "./WriteMessage";
 import SetDate from "./SetDate";
+import { ImageBackground } from "react-native";
 
 const CreateMessage = () => {
   const [currentStep, setCurrentStep] = React.useState(0);
@@ -16,18 +17,8 @@ const CreateMessage = () => {
   const [date, setDate] = React.useState(null);
 
   const onNext = () => setCurrentStep((prev) => prev + 1);
-  const onBack = () => setCurrentStep((prev) => prev - 1);
 
-  const onSubmit = () => {
-    alert(
-      `Message created: ${JSON.stringify({
-        selectedFriend,
-        selectedMediaType,
-        message,
-        date,
-      })}`
-    );
-  };
+  const onSubmit = () => {};
 
   const steps = {
     0: <StartCreateFlow onContinue={onNext} />,
@@ -58,7 +49,14 @@ const CreateMessage = () => {
     5: <SetDate onNext={onSubmit} setDate={setDate} />,
   };
 
-  return steps[currentStep];
+  return (
+    <ImageBackground
+      source={require("../../assets/background1.png")}
+      style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }}
+    >
+      {steps[currentStep]}
+    </ImageBackground>
+  );
 };
 
 export default CreateMessage;
