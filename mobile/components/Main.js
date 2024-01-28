@@ -57,6 +57,10 @@ const Main = () => {
           resizeMode="cover"
         />
       )}
+
+    
+
+    
     <View style={{ flexDirection: 'row', justifyContent: 'space-around', paddingVertical: 10, backgroundColor: 'white', position: 'absolute', bottom: 0, width: '100%', backgroundColor: 'white', height: 100 }}>
       <CustomTabBarButton icon={require('../assets/main_icon.png')} onPress={goToMain} />
       <CustomTabBarButton icon={require('../assets/archive_icon.png')} onPress={goToArchive} />
