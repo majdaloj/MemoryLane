@@ -5,13 +5,13 @@ import { View, Image, Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 // importing different pages
-import Login from './components/Login.js';
-import Signup from './components/Signup.js';
-import Main from './components/Main.js';
-import CreateMessage from './components/CreateMessage.js';
-import Settings from './components/Settings.js';
-import Friends from './components/Friends.js';
-import Archive from './components/Archive.js';
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Main from "./pages/Main";
+import CreateMessage from "./pages/CreateMessage";
+import Settings from "./pages/Settings";
+import Friends from "./pages/Friends";
+import Archive from "./pages/Archive";
 
 const Stack = createStackNavigator();
 

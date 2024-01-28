@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "uofthacks2024-412522",
+  "private_key_id": "45753327dfda8c64e727b0201454171e52bfeddd",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC6Kb6UH/Pls0m/\nV8+fWvHGvt80uMdXZebbTtQ3Ia5uGlX+WetLmqqCSL/kZLP53qh+/ibB/IYVWeZC\nQwrX/JMIRPXrk7WMRay7lU+pPjqRjYdNse6tY8p+7vtMorTPHn2JkR+zoM2YfCOa\nerJQm7yxcWrQ0ccbyTlVoGeSaQUUMF6PhpZPteoxZPCcHuFU0M4oEFY1TlYUhi44\npBA+ow1KsqMQEnbzRHYtd/ENA/qpbWwFN5QZOvFdKQ6ek1pSeOgRkoi+A+JDO1Q8\njAzTxpMYrsVTA923M/vWDolCsBFWdnVjFSR/SSEwG/7Miw8IjEeD4C4jN5DCACUa\nrfIYxOQZAgMBAAECggEARRXyzMOi3o6PgrvSqB+28/unl8gu6gc+CgsSBDeypNeP\nLCowgMkwF9NpqxeYFtWDkEU/GuRc2hWXtuVsY8Uux3XYEYmqaRj+Rkrd2j/muldc\na//pRF1xK3QCvGjxUp/NFL1Pl3jIc5s2F0ELZZC2EN+3NTF0g6JEbbtuVE42/Utn\ntTn/VUeKLcbDzYXoqXd9p+tw2W8HV7uGRUzucz6A38P4+78iN3qQVHLJgTgl1jbg\n4VeH8MXF3vkJ6wUVmBigRam8Ux9cZbX2khIJ2k6EsLncvMPWVc7CGH4iqSMlH1sg\naDVs+jjhsspRm5VafoomChvd2M8khoAQZTjLQrHBNQKBgQDmrgLE73I+Oe8CNNKr\nFnuOavwq+rIroCQUzV+CZazsd1SdgiRr51XY7qyxwYcMUmPARPOvEHJBRx3BNmnK\nUatye567na7t9lO59eSYXu7TAfjZ2xRQjOpzdzSx89yB5oorZn/7mRhloD8S1vL5\nD3EJOGq8fqzeQZccdKajRwjMXwKBgQDOmNY4GF+36QJcixa3p7+EWj1enhzLYyoM\nhtKKVHuwne3RhHSQd1yPIUSBg1zxOGOv8CHyGrEE1Sne5SAoDDBzjRxLYsDkSi9q\n84ZaEHwvi3KHOVJeC2c/j3JOjYKU+qQYL2dD0/4an+ouHZUTGcLvhC8JaIipiY0T\nVE24kVOihwKBgF/jMU9/YPOwzUMThgaMH+wBWLTc5LbxqE3lWLAxZ4Ib0FZwxIb9\n8FduTubM1UAv9zry7oB0y6mK0DmCTtNEw4mhDUhbsV1FKWSBa/ZSb9/SUAju4jDh\ngotgn8zg22Y72G9V+hkxeEy2IcHJC9KvsoLsqqGT3nO8u/2eF66DVortAoGAeHsC\n+mWkdHELMoLeda367ylc/q/AZQ/odrOtVoRcOaxwAy52d8VUEhg5hjngWsAiyniE\no1bTgtj4+Qav0QsCunBBXukxSjDFJF7uK9nPQj7VRGy2TyfhR1zVMWAvFchxJ7WF\nSDX5yvcVL12LET+Fwf5ZG+h9Qjl4LxyL0qXVm0MCgYAvKNgCoyRvNF0WysNbC/Bb\nYLuZNtc+/Z6oQq8yFlWrKFlj/CZyVTAd3ePWuhN9GDvSaqm7aeSVr9xovzDIYtv7\n3svGiAld/1tGiufzvFcSZE0qwqlHSakWKJWzWoarJlK8jrWA+ICwXaEMPNUiRaNY\nrlhEifFBCiQKrH65ya0Dzw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "uofthacks@uofthacks2024-412522.iam.gserviceaccount.com",
+  "client_id": "103303943471339821873",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/uofthacks%40uofthacks2024-412522.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
