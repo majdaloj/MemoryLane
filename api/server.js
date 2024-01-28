@@ -1,9 +1,14 @@
 // server.js
 const express = require('express');
 const sequelize = require('./db/sequelize');
+
 const User = require('./models/User');
 const Memory = require('./models/Memory');
 const UserBoundary = require('./models/UserBoundary');
+
+const userRoutes = require('./routes/userRoutes');
+const memoryRoutes = require('./routes/memoryRoutes');
+const userBoundaryRoutes = require('./routes/boundaryRoutes');
 
 const app = express();
 const port = process.env.PORT || 8080;
@@ -32,6 +37,11 @@ process.on('SIGINT', () => {
     process.exit(0);
   });
 });
+
+// Use the routes for endpoints
+app.use('/api/users', userRoutes);
+app.use('/api/memories', memoryRoutes);
+app.use('/api/user-boundaries', userBoundaryRoutes);
 
 // Start the server
 app.listen(port, () => {
