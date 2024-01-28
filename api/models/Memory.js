@@ -1,9 +1,10 @@
-'use strict';
+"use strict";
 
-const { DataTypes } = require('sequelize');
-const sequelize = require('../db/sequelize'); // Adjust the path as needed
+const { DataTypes } = require("sequelize");
+const sequelize = require("../db/sequelize"); // Adjust the path as needed
+const User = require("./User");
 
-const Memory = sequelize.define('Memory', {
+const Memory = sequelize.define("Memory", {
   memory_id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -12,15 +13,15 @@ const Memory = sequelize.define('Memory', {
   from_user_id: {
     type: DataTypes.INTEGER,
     references: {
-      model: 'User',
-      key: 'user_id',
+      model: User,
+      key: "user_id",
     },
   },
   for_user_id: {
     type: DataTypes.INTEGER,
     references: {
-      model: 'User',
-      key: 'user_id',
+      model: User,
+      key: "user_id",
     },
   },
   send_time: {
@@ -37,8 +38,18 @@ const Memory = sequelize.define('Memory', {
   },
   state: {
     type: DataTypes.STRING,
-    defaultValue: 'visible',
+    defaultValue: "visible",
   },
+});
+
+Memory.belongsTo(User, {
+  foreignKey: "from_user_id",
+  targetKey: "user_id",
+});
+
+Memory.belongsTo(User, {
+  foreignKey: "for_user_id",
+  targetKey: "user_id",
 });
 
 module.exports = Memory;
