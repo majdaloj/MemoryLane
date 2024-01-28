@@ -4,6 +4,15 @@ const sequelize = require('./db/sequelize');
 const User = require('./models/User');
 const Memory = require('./models/Memory');
 const UserBoundary = require('./models/UserBoundary');
+const FriendRequest = require('./models/FriendRequests');
+const Friend = require('./models/Friend');
+
+const sendMemoryRouter = require('./routes/send-memory');
+
+const userRoutes = require('./routes/userRoutes');
+const memoryRoutes = require('./routes/memoryRoutes');
+const userBoundaryRoutes = require('./routes/boundaryRoutes');
+const friendRoutes = require('./routes/friendsRoutes');
 
 const app = express();
 const port = process.env.PORT || 8080;
@@ -32,6 +41,15 @@ process.on('SIGINT', () => {
     process.exit(0);
   });
 });
+
+app.use(express.json());
+app.use('/schedule', sendMemoryRouter);
+
+// Use the routes for endpoints
+app.use('/api/users', userRoutes);
+app.use('/api/memories', memoryRoutes);
+app.use('/api/user-boundaries', userBoundaryRoutes);
+app.use('/api/friends', friendRoutes);
 
 // Start the server
 app.listen(port, () => {
