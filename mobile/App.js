@@ -18,16 +18,15 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer independent={true}>
-      <Stack.Navigator initialRouteName="Login">
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Signup" component={Signup} />
-        <Stack.Screen name="Main" component={Main} />
-        <Stack.Screen name="CreateMessage" component={CreateMessage} />
-        <Stack.Screen name="Settings" component={Settings} />
-        <Stack.Screen name="Friends" component={Friends} />
-        <Stack.Screen name="Archive" component={Archive} />
+      <Stack.Navigator initialRouteName='Login'>
+        <Stack.Screen name='Login' component={Login} />
+        <Stack.Screen name='Signup' component={Signup} />
+        <Stack.Screen name='Main' component={Main} />
+        <Stack.Screen name='CreateMessage' component={CreateMessage} />
+        <Stack.Screen name='Settings' component={Settings} />
+        <Stack.Screen name='Friends' component={Friends} />
+        <Stack.Screen name='Archive' component={Archive} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
-
