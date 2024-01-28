@@ -2,7 +2,7 @@ const router = require("express").Router();
 const Memory = require("../models/Memory");
 const User = require("../models/User");
 
-router.post("/send-memory", async (req, res) => {
+router.get("/send-memory", async (req, res) => {
   try {
     const invisibleMemories = await Memory.findAll({
       where: {
