@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -7,9 +7,56 @@ import {
   TouchableOpacity,
   TextInput,
   Keyboard,
+  Image,
 } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
+
+const CustomTabBarButton = ({ label, icon, onPress }) => (
+  <TouchableOpacity onPress={onPress} style={{ alignItems: 'center' }}>
+    <Image source={icon} resizeMode="contain" style={{ width: 35, height: 35, tintColor: '#748c94' }} />
+    <Text style={{ color: '#748c94', fontSize: 15 }}>{label}</Text>
+  </TouchableOpacity>
+);
 
 const Friends = () => {
+  const navigation = useNavigation();
+
+  const goToMain = () => {
+  navigation.navigate('Main');
+  };
+
+  const goToArchive = () => {
+  navigation.navigate('Archive');
+  };
+
+  const goToCreateMessage = () => {
+  navigation.navigate('CreateMessage');
+  };
+
+  const goToFriends = () => {
+  navigation.navigate('Friends');
+  };
+
+  const goToSettings = () => {
+  navigation.navigate('Settings');
+  };
+
+  const imageSources = [
+    require('../assets/background1.png'),
+    require('../assets/background2.png'),
+    require('../assets/background3.png'),
+  ];
+  const [randomImageSource, setRandomImageSource] = useState(null);
+  useEffect(() => {
+    chooseRandomImage();
+  }, []);
+
+  const chooseRandomImage = () => {
+    const randomIndex = Math.floor(Math.random() * imageSources.length);
+    setRandomImageSource(imageSources[randomIndex]);
+  };
+
   const [friends, setFriends] = useState([
     { id: '1', name: 'Friend 1' },
     { id: '2', name: 'Friend 2' },
@@ -66,6 +113,13 @@ const Friends = () => {
 
   return (
     <View style={styles.container}>
+      {randomImageSource && (
+        <Image
+          source={randomImageSource}
+          style={{ width: '125%', height: '100%', position: 'absolute' }}
+          resizeMode="cover"
+        />
+      )}
       <Text style={styles.title}>Friends Page</Text>
       <View style={styles.searchContainer}>
         <TextInput
@@ -83,6 +137,13 @@ const Friends = () => {
         keyExtractor={(friend) => friend.id}
         renderItem={renderFriend}
       />
+      <View style={{ flexDirection: 'row', justifyContent: 'space-around', paddingVertical: 10, backgroundColor: 'white', position: 'absolute', bottom: 0, width: '110%', backgroundColor: 'white', height: 100 }}>
+      <CustomTabBarButton icon={require('../assets/main_icon.png')} onPress={goToMain} />
+      <CustomTabBarButton icon={require('../assets/archive_icon.png')} onPress={goToArchive} />
+      <CustomTabBarButton icon={require('../assets/createmessage_icon.png')} onPress={goToCreateMessage} />
+      <CustomTabBarButton icon={require('../assets/friends_icon.png')} onPress={goToFriends} />
+      <CustomTabBarButton icon={require('../assets/settings_icon.png')} onPress={goToSettings} />
+      </View>
     </View>
   );
 };
@@ -112,15 +173,15 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   friendBackButton: {
-    backgroundColor: '#4285f4',
+    backgroundColor: '#FFC0CB',
     padding: 8,
     borderRadius: 5,
   },
   friendBackButtonText: {
-    color: '#fff',
+    color: '#000000',
   },
   unfriendButton: {
-    backgroundColor: '#ff4d4d',
+    backgroundColor: '#A020F0',
     padding: 8,
     borderRadius: 5,
   },
@@ -140,7 +201,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   searchButton: {
-    backgroundColor: '#34a853', // Change the color to your preference
+    backgroundColor: '#4FB9AF', // Change the color to your preference
     padding: 10,
     borderRadius: 5,
   },
