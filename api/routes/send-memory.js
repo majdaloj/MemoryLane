@@ -14,6 +14,9 @@ router.post("/send-memory", async (req, res) => {
       if (memory.send_time <= Date.now()) {
         memory.state = "visible";
         memory.save();
+        console.log(
+          `Memory from ${memory.from_user_id} to ${memory.for_user_id} has been sent !`
+        );
       }
     }
 
