@@ -1,10 +1,11 @@
 // server.js
 const express = require('express');
 const sequelize = require('./db/sequelize');
-
 const User = require('./models/User');
 const Memory = require('./models/Memory');
 const UserBoundary = require('./models/UserBoundary');
+
+const sendMemoryRouter = require('./routes/send-memory');
 
 const userRoutes = require('./routes/userRoutes');
 const memoryRoutes = require('./routes/memoryRoutes');
@@ -37,6 +38,9 @@ process.on('SIGINT', () => {
     process.exit(0);
   });
 });
+
+app.use(express.json());
+app.use('/schedule', sendMemoryRouter);
 
 // Use the routes for endpoints
 app.use('/api/users', userRoutes);
