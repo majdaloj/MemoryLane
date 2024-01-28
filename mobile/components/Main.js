@@ -1,27 +1,11 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 import { View, Text, Image, TouchableOpacity, Header } from 'react-native';
-import Settings from './Settings.js';
 
-const Logo = () => (
-  <Image
-    source={require('../assets/memorylane_logo.png')}
-    style={{ width: 60, height: 20 }}
-  />
-);
+import TopBar from './TopBar';
+import BottomBar from './BottomBar';
 
-const SettingsIcon = ({ navigation }) => (
-  <TouchableOpacity onPress={() => navigation.navigate('Settings')}>
-    <Image
-      source={require('../assets/settings_icon.png')}
-      style={{ width: 30, height: 30, marginRight: 10 }} // Adjust the size and margin as needed
-    />
-  </TouchableOpacity>
-);
-
-const Stack = createStackNavigator();
 
 const Main = () => {
   const imageSources = [
@@ -41,7 +25,7 @@ const Main = () => {
 
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <View style={{ flex: 1 }}>
       {randomImageSource && (
         <Image
           source={randomImageSource}
@@ -49,14 +33,10 @@ const Main = () => {
           resizeMode="cover"
         />
       )}
-
-      {/* <Header
-        leftComponent={{ icon: 'menu', color: '#fff' }}
-        centerComponent={{ text: 'MY TITLE', style: { color: '#fff' } }}
-        rightComponent={{ icon: 'home', color: '#fff' }}
-      /> */}
-
-
+      <NavigationContainer independent={true}>
+        <TopBar />
+        <BottomBar />
+      </NavigationContainer>
     </View>
   );
 }
