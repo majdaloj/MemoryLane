@@ -74,3 +74,24 @@ Our proudest achievement lies in translating a visionary concept into reality. W
 
 # What's next for MemoryLane 💭
 What's next for MemoryLane is an exciting journey of refinement and expansion. Discussing with our fellow hackers we already were shown interest in a social media platform that wasn't user-curating centric. As this was the team's first time developing using React Native, we plan to gather user feedback to enhance the user experience and implement additional features that resonate with our users. This includes refining the media scrolling functionality, optimizing performance, and incorporating more interactive and nostalgic elements.
+
+# How to Use:
+## For devs:
+
+## API
+
+Start dev server with
+
+```
+npm run dev
+```
+
+## Mobile
+
+Start expo go with
+
+```
+npx expo start
+```
+
+Then scan the QR code in the expo go app.
